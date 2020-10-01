@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:political_preparedness_flutter/core/constants.dart';
 import 'package:political_preparedness_flutter/pages/elections_page.dart';
 import 'package:political_preparedness_flutter/pages/representatives_page.dart';
 import 'package:political_preparedness_flutter/pages/voter_info_page.dart';
+import 'core/bloc_observer.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = AppBlocObserver();
   await di.init();
   runApp(MyApp());
 }
