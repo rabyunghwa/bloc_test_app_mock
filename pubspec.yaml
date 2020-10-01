@@ -45,7 +45,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mockito: ^4.1.0
-  build_runner: ^1.10.2
+  build_runner: 
   moor_generator: ^3.3.1
   moor_ffi: ^0.8.0 # or latest version
 

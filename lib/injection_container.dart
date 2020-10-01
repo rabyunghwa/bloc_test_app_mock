@@ -34,7 +34,7 @@ final sl = GetIt.instance;
 Future<void> init() async {
   // Bloc
   // elections
-  sl.registerFactory<GetFollowedElectionsBloc>(
+  sl.registerLazySingleton<GetFollowedElectionsBloc>(
     () => GetFollowedElectionsBloc(followed: sl()),
   );
   sl.registerFactory<GetSavedElectionsBloc>(
@@ -47,7 +47,7 @@ Future<void> init() async {
   sl.registerFactory<GetVoterInfoBloc>(
     () => GetVoterInfoBloc(voterInfo: sl()),
   );
-  sl.registerFactory<GetElectionByIdBloc>(
+  sl.registerLazySingleton<GetElectionByIdBloc>(
     () => GetElectionByIdBloc(electionById: sl(), update: sl()),
   );
 
