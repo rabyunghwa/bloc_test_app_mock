@@ -1,0 +1,53 @@
+{
+  "elections": [
+    {
+      "id": "2000",
+      "name": "VIP Test Election",
+      "electionDay": "2021-06-06",
+      "ocdDivisionId": "ocd-division/country:us"
+    },
+    {
+      "id": "4954",
+      "name": "Nebraska Presidential and NetworkState Primary Election",
+      "electionDay": "2020-05-12",
+      "ocdDivisionId": "ocd-division/country:us/state:ne"
+    },
+    {
+      "id": "4957",
+      "name": "Wisconsin 7th Congressional District Special Election",
+      "electionDay": "2020-05-12",
+      "ocdDivisionId": "ocd-division/country:us/state:wi"
+    },
+    {
+      "id": "4959",
+      "name": "Idaho NetworkState Primary Election ",
+      "electionDay": "2020-05-19",
+      "ocdDivisionId": "ocd-division/country:us/state:id"
+    },
+    {
+      "id": "4961",
+      "name": "Oregon Presidential and NetworkState Primary Election",
+      "electionDay": "2020-05-19",
+      "ocdDivisionId": "ocd-division/country:us/state:or"
+    },
+    {
+      "id": "4964",
+      "name": "DC Presidential and NetworkState Primary Election",
+      "electionDay": "2020-06-02",
+      "ocdDivisionId": "ocd-division/country:us/district:dc"
+    },
+    {
+      "id": "4989",
+      "name": "Rhode Island Presidential Primary Election",
+      "electionDay": "2020-06-02",
+      "ocdDivisionId": "ocd-division/country:us/state:ri"
+    },
+    {
+      "id": "4994",
+      "name": "California Congressional District 25 Special General Election",
+      "electionDay": "2020-05-12",
+      "ocdDivisionId": "ocd-division/country:us/state:ca"
+    }
+  ],
+  "kind": "civicinfo#electionsQueryResponse"
+}

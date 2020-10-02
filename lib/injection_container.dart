@@ -7,10 +7,7 @@ import 'package:political_preparedness_flutter/repositories/voterinfo/voter_info
 import 'package:political_preparedness_flutter/usecases/voterinfo/refresh_voter_info_async.dart';
 
 import 'bloc/elections/get_saved_elections_bloc.dart';
-import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
-import 'package:moor_flutter/moor_flutter.dart';
-import 'package:political_preparedness_flutter/core/db/election_db.dart';
 import 'package:political_preparedness_flutter/datasources/local/local_datasource.dart';
 import 'package:political_preparedness_flutter/datasources/local/local_datasource_impl.dart';
 import 'package:political_preparedness_flutter/datasources/remote/remote_datasource.dart';
@@ -25,9 +22,6 @@ import 'package:political_preparedness_flutter/usecases/voterinfo/get_election_b
     as get_election_by_id_usecase;
 import 'package:political_preparedness_flutter/usecases/voterinfo/update_election.dart'
     as update_election_usecase;
-import 'package:http/http.dart' as http;
-
-import 'core/network/network_info.dart';
 
 final sl = GetIt.instance;
 
@@ -74,33 +68,19 @@ Future<void> init() async {
     () => ElectionsRepositoryImpl(
       remoteDataSource: sl(),
       localDataSource: sl(),
-      networkInfo: sl(),
     ),
   );
   // voter info
   sl.registerLazySingleton<VoterInfoRepository>(() => VoterInfoRepositoryImpl(
-      remoteDataSource: sl(), localDataSource: sl(), networkInfo: sl()));
+      remoteDataSource: sl(), localDataSource: sl()));
 
   // Data sources
   sl.registerLazySingleton<RemoteDataSource>(
-    () => RemoteDataSourceImpl(client: sl()),
+    () => RemoteDataSourceImpl(),
   );
 
   sl.registerLazySingleton<LocalDataSource>(
-    () => LocalDataSourceImpl(appDatabase: sl()),
+    () => LocalDataSourceImpl(),
   );
 
-  //! Core
-  sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
-
-  //! External
-  // Moor
-  sl.registerLazySingleton<QueryExecutor>(() =>
-      FlutterQueryExecutor.inDatabaseFolder(
-          path: "db.sqlite", logStatements: true));
-  sl.registerLazySingleton<AppDatabase>(() => AppDatabase(sl()));
-  // http
-  sl.registerLazySingleton<http.Client>(() => http.Client());
-  sl.registerLazySingleton<DataConnectionChecker>(
-      () => DataConnectionChecker());
 }

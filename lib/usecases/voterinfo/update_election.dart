@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:political_preparedness_flutter/core/db/election_db.dart';
+import 'package:political_preparedness_flutter/core/db/db_election.dart';
 import 'package:political_preparedness_flutter/core/usecases/usecase.dart';
 import 'package:political_preparedness_flutter/repositories/voterinfo/voter_info_repository.dart';
 

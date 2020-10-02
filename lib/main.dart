@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:political_preparedness_flutter/core/constants.dart';
 import 'package:political_preparedness_flutter/pages/elections_page.dart';
-import 'package:political_preparedness_flutter/pages/representatives_page.dart';
 import 'package:political_preparedness_flutter/pages/voter_info_page.dart';
 import 'injection_container.dart' as di;
 
@@ -28,9 +27,8 @@ class MyApp extends StatelessWidget {
       home: ElectionsPage(),
       // navigation definition
       routes: {
-        VoterInfoPage.routeName: (context) => VoterInfoPage(),
         ElectionsPage.routeName: (context) => ElectionsPage(),
-        RepresentativesPage.routeName: (context) => RepresentativesPage(),
+        VoterInfoPage.routeName: (context) => VoterInfoPage(),
       },
     );
   }

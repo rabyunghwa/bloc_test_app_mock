@@ -1,0 +1,39 @@
+{
+  "kind": "civicinfo#voterInfoResponse",
+  "election": {
+    "id": "4959",
+    "name": "Idaho State Primary Election ",
+    "electionDay": "2020-05-19",
+    "ocdDivisionId": "ocd-division/country:us/state:id"
+  },
+  "normalizedInput": {
+    "line1": "Idaho State Primary Election",
+    "city": "",
+    "state": "ID",
+    "zip": ""
+  },
+  "state": [
+    {
+      "name": "Idaho",
+      "electionAdministrationBody": {
+        "name": "IDAHO SECRETARY OF STATE ELECTION OFFICE",
+        "electionInfoUrl": "https://idahovotes.gov/",
+        "absenteeVotingInfoUrl": "https://idahovotes.gov/absentee-request/",
+        "electionOfficials": [
+          {
+            "name": "Lawerence Denney",
+            "title": "Idaho Secretary of State",
+            "officePhoneNumber": "208-334-2852",
+            "emailAddress": "elections@sos.idaho.gov"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ]
+}

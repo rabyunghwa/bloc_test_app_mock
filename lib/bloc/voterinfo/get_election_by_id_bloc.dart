@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:political_preparedness_flutter/core/db/election_db.dart';
+import 'package:political_preparedness_flutter/core/db/db_election.dart';
 import 'package:political_preparedness_flutter/core/model/election.dart';
 import 'package:political_preparedness_flutter/usecases/voterinfo/get_election_by_id.dart' as get_election_by_id_usecase;
 import 'package:political_preparedness_flutter/usecases/voterinfo/update_election.dart' as update_election_usecase;
@@ -28,6 +28,7 @@ class GetElectionByIdBloc
   @override
   Stream<GetElectionByIdState> mapEventToState(
       GetElectionByIdEvent event,) async* {
+    print("mapEventToState called...");
     if (event is GetElectionById) {
       final electionById = getElectionById(
           get_election_by_id_usecase.Params(electionId: event.electionId));

@@ -28,7 +28,6 @@ class RefreshElectionsBloc
       final refreshEither = await refreshNetworkElectionListAsync(
         NoParams(),
       );
-      yield Refreshing();
       yield refreshEither.fold(
         (failure) {
           if (failure is NoNetworkFailure) {

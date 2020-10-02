@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:political_preparedness_flutter/core/db/election_db.dart';
+import 'package:political_preparedness_flutter/core/db/db_election.dart';
 import 'package:political_preparedness_flutter/core/error/failure.dart';
 import 'package:political_preparedness_flutter/core/model/election.dart';
 import 'package:political_preparedness_flutter/core/model/voter_info.dart';

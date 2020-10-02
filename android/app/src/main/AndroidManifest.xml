@@ -1,7 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.political_preparedness_flutter">
     <!-- https://stackoverflow.com/a/55432850 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="political_preparedness_flutter"

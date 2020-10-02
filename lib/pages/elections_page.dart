@@ -5,7 +5,6 @@ import 'package:political_preparedness_flutter/bloc/elections/get_saved_election
 import 'package:political_preparedness_flutter/bloc/elections/refresh_elections_bloc.dart';
 import 'package:political_preparedness_flutter/core/constants.dart';
 import 'package:political_preparedness_flutter/widgets/elections/followed_elections_display.dart';
-import 'package:political_preparedness_flutter/widgets/elections/refreshing_widget.dart';
 import 'package:political_preparedness_flutter/widgets/elections/saved_elections_display.dart';
 
 // ignore: implementation_imports
@@ -39,7 +38,6 @@ class ElectionsPage extends StatelessWidget {
           child: new Stack(
             // equivalent to FrameLayout
             children: [
-              new RefreshingWidget(),
               Column(
                 // equivalent to vertical LinearLayout
                 children: [

@@ -1,4 +1,4 @@
-import 'package:political_preparedness_flutter/core/db/election_db.dart';
+import 'package:political_preparedness_flutter/core/db/db_election.dart';
 
 abstract class LocalDataSource {
   // elections

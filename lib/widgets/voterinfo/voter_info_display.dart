@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:political_preparedness_flutter/bloc/voterinfo/get_voter_info_bloc.dart';
-import 'package:political_preparedness_flutter/core/constants.dart';
 import 'package:political_preparedness_flutter/widgets/elections/election_screen_arguments.dart';
 
 import '../message_display.dart';
@@ -24,48 +23,30 @@ class _VoterInfoDisplayState extends State<VoterInfoDisplay> {
   Widget build(BuildContext context) {
     return Container(
         child: BlocConsumer(
-            cubit: BlocProvider.of<GetVoterInfoBloc>(context),
-            listener: (context, state) {
-              if (state is Error) {
-                Scaffold.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(state.message),
-                  ),
-                );
-              } else if (state is Refreshed) {
-                Scaffold.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(REFRESHED_MESSAGE),
-                  ),
-                );
-              }
-            },
-            // ignore: missing_return
-            builder: (context, state) {
-              if (state is Refreshing) {
-                return Container(
-                    height: MediaQuery.of(context).size.height / 3,
-                    child: Center(
-                      child: CircularProgressIndicator(
-                        key: Key(KEY_CIRCULAR_INDICATOR),
-                      ),
-                    ));
-              } else if (state is Refreshed) {
-                return Column(
-                  children: <Widget>[
-                    Text(
-                      state.voterInfo.election.name,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    Text(state.voterInfo.election.electionDay),
-                  ],
-                );
-              } else if (state is Error) {
-                return MessageDisplay(
-                  message: "",
-                );
-              }
-            }));
+      cubit: BlocProvider.of<GetVoterInfoBloc>(context),
+      builder: (context, state) {
+        if (state is Refreshed) {
+          return Column(
+            children: <Widget>[
+              Text(
+                state.voterInfo.election.name,
+                style: TextStyle(fontSize: 16),
+              ),
+              Text(state.voterInfo.election.electionDay),
+            ],
+          );
+        } else if (state is Error) {
+          return MessageDisplay(
+            message: "",
+          );
+        } else {
+          return MessageDisplay(
+            message: "",
+          );
+        }
+      },
+      listener: (BuildContext context, state) {},
+    ));
   }
 
   void dispatchConcrete() {

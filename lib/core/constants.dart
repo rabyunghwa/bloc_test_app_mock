@@ -10,9 +10,6 @@ const String REFRESHED_MESSAGE = 'Refreshed';
 const String NO_SAVED_ELECTIONS_MESSAGE = 'No saved elections';
 const String NO_FOLLOWED_ELECTIONS_MESSAGE = 'No followed elections';
 
-const String API_KEY = "AIzaSyBaW1Nkwku7PZOhrt598K3qafOLFhx2xR8";
-const String BASE_URL = "https://www.googleapis.com/civicinfo/v2/";
-
 // widget keys
 const String KEY_CIRCULAR_INDICATOR = "CircularProgressIndicator";
 const String KEY_SAVED_ELECTIONS = "SavedElections";

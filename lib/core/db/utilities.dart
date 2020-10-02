@@ -1,7 +1,7 @@
 import 'package:political_preparedness_flutter/core/network/dto/network_election.dart';
 
 import '../constants.dart';
-import 'election_db.dart';
+import 'db_election.dart';
 
 List<DBElection> fromNetworkElection(List<NetworkElection> networkElections) {
     List<DBElection> dbElections = List<DBElection>();

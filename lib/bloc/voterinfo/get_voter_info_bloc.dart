@@ -31,7 +31,6 @@ class GetVoterInfoBloc extends Bloc<GetVoterInfoEvent, GetVoterInfoState> {
             address: event.addressString,
             allAvailable: true),
       );
-      yield Refreshing();
       yield refreshEither.fold(
         (failure) {
           if (failure is NoNetworkFailure) {
